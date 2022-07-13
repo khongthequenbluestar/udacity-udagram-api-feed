@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ducta11-kubernetes-udagram-api-feed
+  labels:
+    app: ducta11-kubernetes-udagram-api-feed
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ducta11-kubernetes-udagram-api-feed
+  template:
+    metadata:
+      labels:
+        app: ducta11-kubernetes-udagram-api-feed
+    spec:
+      containers:
+      - name: udacity-udagram-api-feed
+        image: khongthequenbluestar/udacity-udagram-api-feed
+        ports:
+        - containerPort: 8080
